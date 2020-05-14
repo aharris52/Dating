@@ -1,4 +1,5 @@
 <?php
+
 // turn on error reporting
 ini_set('display_errors',1);
 error_reporting(E_ALL);
@@ -6,20 +7,17 @@ error_reporting(E_ALL);
 // require the autoload file
 require_once('vendor/autoload.php');
 
+//Start a session
+session_start();
+
 // create an instance of the base class
 $f3 = Base::instance();
 
 // define a default route
 $f3->route('GET /', function(){
 
-    //troubleshooting
-    echo '<h1>Hello world!</h1>';
-
     $view = new Template();
-
-    //troubleshooting
     echo $view->render('views/home2.html');
-    echo '<h1>Hello world!</h1>';
 });
 // close default
 
