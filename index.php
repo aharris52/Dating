@@ -51,5 +51,15 @@ $f3->route('GET|POST /interests', function($f3){
 
 });
 
+// interest route
+$f3->route('GET|POST /summary', function($f3){
+
+    //troubleshooting
+    echo '<h1>Hello world!</h1>';
+    $view = new Template();
+    echo $view->render('views/summary.html');
+
+});
+
 // run fat free
 $f3->run();
