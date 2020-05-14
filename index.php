@@ -35,9 +35,19 @@ $f3->route('GET|POST /personal-information', function($f3){
 $f3->route('GET|POST /profile', function($f3){
 
     //troubleshooting
+    //echo '<h1>Hello world!</h1>';
+    $view = new Template();
+    echo $view->render('views/profile.html');
+
+});
+
+// interest route
+$f3->route('GET|POST /interests', function($f3){
+
+    //troubleshooting
     echo '<h1>Hello world!</h1>';
-    //$view = new Template();
-    //echo $view->render('views/profile.html');
+    $view = new Template();
+    echo $view->render('views/interests.html');
 
 });
 

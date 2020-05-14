@@ -8,7 +8,7 @@
     <link rel="icon" href="../images/favicon.png" type="image/png"/>
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="../styles/dating-styles.css">
+    <link rel="stylesheet" href="styles/dating-styles.css">
 
     <!-- Bootstrap Styles -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -32,9 +32,9 @@
             <span class="navbar-toggler-icon"></span>
         </button>
     </nav><br>
-    <form>
+    <form action="#" method="post">
         <h2>Personal Information</h2>
-        <hr>
+        <hr><br>
 
         <!-- Name Info -->
         <div class="form-group row">
@@ -84,11 +84,21 @@
         </div>
         <br>
         <div class="form-group row">
+            <!-- Button -->
             <div class="col-sm-8">
-                <!--<button type="submit" class="btn btn-primary">Next</button>-->
                 <a href="profile" class="btn btn-secondary">Next</a>
             </div>
-        </div>
+
+            <div class="col-sm-4">
+            <span id="privacy" class="border border-secondary">
+                <p><strong>Note:</strong> All information entered is protected by our privacy policy.
+                Profile information can only be viewed by others with your permission.
+            </p>
+            </span>
+            </div>
+        </div><!-- close bottom row -->
+        <br>
+        <hr>
     </form>
 </div>
 
