@@ -20,15 +20,82 @@
 
 <body>
 
+    <!-- Top NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">BikeMatch</a>
+    </nav><br>
+
     <div class="container">
+
+        <h2>Interests</h2>
+        <hr><br><br>
+
+        <h5>Indoor Activities</h5>
+
+        <br>
+        <h5>Outdoor Activities</h5>
+
+        <br>
+
+        <div class="row">
+            <div class="col-md-12">
+                <!--Indoor-->
+                <label class="col-mx-12 control-label"><strong>Indoor Interests</strong></label>
+                <div class="col-sm-12">
+                    <repeat group="{{ @indoor }}" value="{{ @in }}">
+                        <label class="col-md-2 mr-4 ml-2">
+                            <input type="checkbox"
+                                   name="indoor[]"
+                                   value="{{ @in }}"> {{ ucfirst(@in) }}</label>
+                    </repeat>
+                </div>
+                <span class="err">
+                    <check if="{{ isset(@errors['indoor']) }}">
+                        {{ @errors['indoor'] }}
+                    </check>
+                </span><br>
+            </div>
+
+
+
         <!-- Button -->
         <div class="col-sm-8">
-            <a href="summary" class="btn btn-secondary">Next</a>
+            <a href="interests" class="btn btn-secondary">Next</a>
         </div>
-    </div>
+        <br><hr>
+
+    </div><!-- Main content container-->
+
+
+    <!-- Footer -->
+    <div class="container">
+        <div class="col-align-self-center">
+            <div class="row justify-content-center">
+                <!-- found on mdbootstrap.com -->
+                <footer class="page-footer font-small blue">
+                    <!-- Copyright -->
+                    <div id="footer" class="footer-copyright text-center py-3">© 2020 Copyright:
+                        <a id="myURL" href="#">aharris.greenriverdev.com</a>
+                    </div>
+                </footer>
+            </div><!-- Footer row 1-->
+            <div class="row justify-content-center">
+                <div class="justify-content center">
+                    <!-- Linkedin -->
+                    <a href="https://www.linkedin.com/in/andrew-harris-sde/"
+                       class="fa-lg p-2 m-2 li-ic"><i class="fab fa-linkedin-in grey-text"></i></a>
+                    <!-- GitHub -->
+                    <a href="https://github.com/aharris52"
+                       class="fa-lg p-2 m-2 tw-ic"><i class="fab fa-github grey-text"></i></a>
+                </div>
+            </div><!-- Footer row 2-->
+        </div><!-- Footer column -->
+    </div><!-- Footer container -->
 
 </body>
 
+<!-- fontAwesome link-->
+<script src="https://kit.fontawesome.com/b3af656e9f.js" crossorigin="anonymous"></script>
 <!-- Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

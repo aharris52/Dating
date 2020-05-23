@@ -20,21 +20,17 @@
 
 <body>
 
+    <!-- Top NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">BikeMatch</a>
+    </nav><br>
+
     <div class="container">
-        <!-- Top NavBar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">BikeMatch</a>
-            <button class="navbar-toggler"
-                    type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </nav><br>
-        <form action="#" method="post">
-            <h2>Personal Information</h2>
-            <hr><br>
+
+        <h2>Personal Information</h2>
+        <hr><br>
+
+        <form id="personal" method="post" action="#">
 
             <!-- Name Info -->
             <div class="form-group row">
@@ -102,7 +98,7 @@
                 <span id="privacy" class="border border-secondary">
                     <p><strong>Note:</strong> All information entered is protected by our privacy policy.
                     Profile information can only be viewed by others with your permission.
-                </p>
+                    </p>
                 </span>
                 </div>
             </div><!-- close bottom row -->
@@ -127,9 +123,11 @@
                 <div class="justify-content center">
                     <!-- Linkedin -->
                     <a href="https://www.linkedin.com/in/andrew-harris-sde/"
+                       target="_blank"
                        class="fa-lg p-2 m-2 li-ic"><i class="fab fa-linkedin-in grey-text"></i></a>
                     <!-- GitHub -->
                     <a href="https://github.com/aharris52"
+                       target="_blank"
                        class="fa-lg p-2 m-2 tw-ic"><i class="fab fa-github grey-text"></i></a>
                 </div>
             </div><!-- Footer row 2-->
