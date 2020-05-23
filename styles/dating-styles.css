@@ -1,3 +1,7 @@
 #privacy {
     background-color: gainsboro;
 }
+
+.err {
+    color: darkred;
+}
