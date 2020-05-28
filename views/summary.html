@@ -43,6 +43,9 @@
                     <li class="list-group-item">Email: {{ @SESSION.email}}</li>
                     <li class="list-group-item">State: {{ @SESSION.state}}</li>
                     <li class="list-group-item">Seeking: {{ @SESSION.seeking}}</li>
+                    <li class="list-group-item"><check if="{{ isset(@SESSION.indoor) }}">
+                        Interest: {{ implode(@SESSION.indoor, ", ") }}, {{ implode(@SESSION.outdoor, ", ") }}
+                    </check></li>
                 </ul>
             </div><br>
 

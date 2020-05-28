@@ -34,7 +34,7 @@
         <div class="row justify-content-around">
             <div class="p-2 col-md-12 align-self-start">
                 <!--Indoor-->
-                <label class="col-mx-12 control-label align-self-start"><strong>Indoor Interests</strong></label>
+                <label class="col-mx-12 control-label align-self-start"><strong>Indoor Activities</strong></label>
                 <div class="col-sm-12 align-self-start">
                     <repeat group="{{ @indoor }}" value="{{ @inside }}">
                         <label class="col-md-2 mr-4 ml-2 align-self-start">
@@ -54,7 +54,7 @@
         <div class="row">
             <!--Outdoor-->
             <div class="col-md-12">
-                <label class="col-mx-6 control-label"><strong>Outdoor Interests</strong></label>
+                <label class="col-mx-6 control-label"><strong>Outdoor Activities</strong></label>
                 <div class="col-sm-12">
                     <repeat group="{{ @outdoor }}" value="{{ @out }}">
                         <label class="col-md-2 mr-4 ml-2"><input type="checkbox" name="outdoor[]" value="{{ @out }}"
