@@ -44,7 +44,7 @@
                     <li class="list-group-item">State: {{ @SESSION.state}}</li>
                     <li class="list-group-item">Seeking: {{ @SESSION.seeking}}</li>
                     <li class="list-group-item"><check if="{{ isset(@SESSION.indoor) }}">
-                        Interest: {{ implode(@SESSION.indoor, ", ") }}, {{ implode(@SESSION.outdoor, ", ") }}
+                        Interests: {{ implode(@SESSION.indoor, ", ") }}, {{ implode(@SESSION.outdoor, ", ") }}
                     </check></li>
                 </ul>
             </div><br>
@@ -70,10 +70,10 @@
         <!-- Button -->
         <div class="col-sm-8">
             <a href="#" class="btn btn-secondary">Contact Me!</a>
-        </div><br>
+        </div><br><br>
 
     </div><!-- Close Summary box -->
-    <br><hr>
+    <br><br><hr>
     <!-- Footer -->
     <div class="container">
         <div class="col-align-self-center">
