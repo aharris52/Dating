@@ -2,7 +2,10 @@
 
 //Validate Name
 function validName($name) {
+    //strip any spaces and replace with empty string
     $name = str_replace(' ', '', $name);
+    //make sure the name field is filled and contains
+    //only alphabetical characters
     return !empty($name) && ctype_alpha($name);
 }
 
@@ -13,12 +16,12 @@ function validAge($age) {
 
 //Validate Phone Number
 function validPhone($phone) {
-    // Allow +, - and . in phone number
+    //Allow +, - and . in phone number
     $filtered_phone_number = filter_var($phone, FILTER_SANITIZE_NUMBER_INT);
-    // Remove "-" from number
+    //Remove "-" from number
     $phone_to_check = str_replace("-", "", $filtered_phone_number);
-    // Check the length of number
-    // This can be customized if you want phone number from a specific country
+    //Check the length of number
+    //can be changed for different countries
     if (strlen($phone_to_check) < 10 || strlen($phone_to_check) > 14) {
         return false;
     } else {
