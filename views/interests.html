@@ -26,27 +26,21 @@
     </nav><br>
 
     <div class="container">
+        <h2>Profile</h2>
+        <hr><br>
 
-        <h2>Interests</h2>
-        <hr><br><br>
+        <form id="interests" action="#" method="post">
 
-        <h5>Indoor Activities</h5>
-
-        <br>
-        <h5>Outdoor Activities</h5>
-
-        <br>
-
-        <div class="row">
-            <div class="col-md-12">
+        <div class="row justify-content-around">
+            <div class="p-2 col-md-12 align-self-start">
                 <!--Indoor-->
-                <label class="col-mx-12 control-label"><strong>Indoor Interests</strong></label>
-                <div class="col-sm-12">
-                    <repeat group="{{ @indoor }}" value="{{ @in }}">
-                        <label class="col-md-2 mr-4 ml-2">
-                            <input type="checkbox"
-                                   name="indoor[]"
-                                   value="{{ @in }}"> {{ ucfirst(@in) }}</label>
+                <label class="col-mx-12 control-label align-self-start"><strong>Indoor Interests</strong></label>
+                <div class="col-sm-12 align-self-start">
+                    <repeat group="{{ @indoor }}" value="{{ @inside }}">
+                        <label class="col-md-2 mr-4 ml-2 align-self-start">
+                            <input type="checkbox" name="indoor[]" value="{{ @inside }}"
+                                <check if="{{ !empty(@selected) && in_array(@inside, @selected) }}">
+                                    checked="checked"</check>> {{ ucfirst(@inside) }}</label>
                     </repeat>
                 </div>
                 <span class="err">
@@ -54,16 +48,33 @@
                         {{ @errors['indoor'] }}
                     </check>
                 </span><br>
+            </div><!--Close Indoor-->
+        </div><!-- Close indoor row -->
+
+        <div class="row">
+            <!--Outdoor-->
+            <div class="col-md-12">
+                <label class="col-mx-6 control-label"><strong>Outdoor Interests</strong></label>
+                <div class="col-sm-12">
+                    <repeat group="{{ @outdoor }}" value="{{ @out }}">
+                        <label class="col-md-2 mr-4 ml-2"><input type="checkbox" name="outdoor[]" value="{{ @out }}"
+                            <check if="{{ !empty(@selectedOut) && in_array(@out, @selectedOut) }}">checked="checked"</check>> {{ ucfirst(@out) }}</label>
+                    </repeat>
+                </div>
+                <span class="err">
+                    <check if="{{ isset(@errors['outdoor']) }}">
+                        {{ @errors['outdoor'] }}
+                    </check>
+                </span><br>
+            </div><!--Close Outdoor-->
+        </div><!-- Close outdoor row -->
+
+            <!-- Button -->
+            <div class="col-sm-8">
+                <button type="submit" class="btn btn-secondary">Next</button>
             </div>
-
-
-
-        <!-- Button -->
-        <div class="col-sm-8">
-            <a href="interests" class="btn btn-secondary">Next</a>
-        </div>
-        <br><hr>
-
+            <br><hr>
+        </form>
     </div><!-- Main content container-->
 
 

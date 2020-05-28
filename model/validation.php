@@ -48,7 +48,7 @@ function validIndoor($indoor) {
     return false;
 }
 
-//Validate outdoor activites
+//Validate outdoor activities
 function validOutdoor($outdoor) {
     $outdoors = getOutDoor();
     if(empty($outdoor)) {
