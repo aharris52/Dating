@@ -113,11 +113,12 @@ $f3->route('GET|POST /profile', function($f3){
     $f3->set('seeking', $seeking);
 
 
-    //"<pre>" . var_dump($_POST). "</pre>";
-    //"<pre>" . var_dump($_SESSION). "</pre>";
+
 
     //troubleshooting
     //echo '<h1>Hello world!</h1>';
+    //var_dump($_SESSION);
+    //var_dump($_POST);
     $view = new Template();
     echo $view->render('views/profile.html');
 
@@ -134,11 +135,11 @@ $f3->route('GET|POST /interests', function($f3){
         //var_dump($_POST);
 
         if(!validIndoor($_POST['indoor'])) {
-            $f3->set('errors["indoor"]', "Please select an indoor activity/ies");
+            $f3->set('errors["indoor"]', "There's so much room for activities!");
         }
 
         if(!validOutdoor($_POST['outdoor'])) {
-            $f3->set('errors["outdoor"]', "Please select an indoor activity/ies");
+            $f3->set('errors["outdoor"]', "There's so much room for activities!");
         }
 
         if (empty($f3->get('errors'))) {
@@ -158,8 +159,8 @@ $f3->route('GET|POST /interests', function($f3){
 
     //troubleshooting
     //echo '<h1>Hello world!</h1>';
-    //"<pre>" . var_dump($_POST). "</pre>";
-    //"<pre>" . var_dump($_SESSION). "</pre>";
+    //var_dump($_SESSION);
+    //var_dump($_POST);
     $view = new Template();
     echo $view->render('views/interests.html');
 
@@ -171,6 +172,7 @@ $f3->route('GET|POST /summary', function($f3){
     //troubleshooting
     //echo '<h1>Hello world!</h1>';
     //var_dump($_SESSION);
+    //var_dump($_POST);
     $view = new Template();
     echo $view->render('views/summary.html');
 

@@ -2,7 +2,22 @@
     background-color: gainsboro;
 }
 
-.err {
+.error {
     color: darkred;
 }
 
+a {
+    color: lightslategrey;
+}
+
+i {
+    color: lightslategrey;
+}
+
+.comment {
+    color: black;
+}
+
+#myURL {
+    color: lightslategrey;
+}
