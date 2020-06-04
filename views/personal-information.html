@@ -99,7 +99,7 @@
                                    name="gender"
                                    id="{{ @gendr }}"
                                    type="radio"
-                                   value="{{ @gendr }}" <check if="{{ @gender == @gendr }}">checked="checked"</check>>
+                                   value="{{ @gender }}" <check if="{{ @gender == @gendr }}">checked="checked"</check>>
                             <label class="form-check-label" for="{{ @gendr }}">{{ @gendr }}</label>
                         </div>
                     </repeat>
@@ -120,7 +120,8 @@
                         <input type="text"
                                class="form-control"
                                id="phone"
-                               name="phone">
+                               name="phone"
+                               value="{{ @phone }}">
                     </div>
                 <!-- Error message -->
                 <span class="err">
@@ -131,6 +132,19 @@
             </div>
             <br>
             <!-- Close Phone Number -->
+
+            <!-- Premium Acct Selector -->
+            <div class="form-group row">
+                <label for="premium" class="col-sm-2 col-form-label"><strong>Premium Account</strong></label>
+                <div class="col-mx-8">
+                    <label class="form-check form-check-inline">
+                        <input class="form-check-input"
+                               id="premium"
+                               name="premium"
+                               type="checkbox">Make me a Premium Member
+                    </label>
+                </div>
+            </div>
 
             <div class="form-group row">
                 <!-- Button -->
