@@ -1,29 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- favicon -->
-    <link rel="icon" href="images/favicon.png" type="image/png"/>
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles/dating-styles.css">
-
-    <!-- Bootstrap Styles -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-          crossorigin="anonymous">
-
     <title>BikeMatch</title>
+    <include href="includes/header.htm"></include>
 </head>
 
 <body>
 
     <!-- Top NavBar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">BikeMatch</a>
-    </nav><br>
+    <include href="includes/nav-bar.htm"></include>
 
     <div class="container">
         <h2>Profile</h2>
@@ -73,25 +58,60 @@
                 </div>
                 <!-- State -->
 
-
-                <!-- Seeking -->
+                <!-- Gender -->
                 <div class="form-group row">
-                    <!-- test -->
+                    <label class="col-sm-3 col-form-label"><strong>Seeking</strong></label>
+                    <div class="col-sm-2">
+                        <div class="radio-inline">
+                            <input class="form-check-input"
+                                   type="checkbox"
+                                   name="gender"
+                                   id="male"
+                                   value="male">
+                            <label class="radio-inline" for="male">
+                                Male
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <div class="radio-inline">
+                            <input class="form-check-input"
+                                   type="checkbox"
+                                   name="gender"
+                                   id="female"
+                                   value="female">
+                            <label class="radio-inline" for="female">
+                                Female
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Error message -->
+                    <span class="err">
+                    <check if="{{ isset(@errors['gender']) }}">
+                        {{ @errors['gender'] }}
+                    </check>
+                </span><br>
+                </div><!-- Close gender -->
+                <!-- Seeking -->
+                <!--<div class="form-group row">
+                    &lt;!&ndash; test &ndash;&gt;
                     <label class="col-sm-2 col-form-label"><strong>Seeking</strong></label>
                     <div class="col-sm-8">
-                        <!--{{ print_r(@gender) }}-->
+                        &lt;!&ndash;{{ print_r(@gender) }}&ndash;&gt;
                         <repeat group="{{ @seeking }}" value="{{ @seek }}">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input"
                                        name="seeking"
                                        id="{{ @seek }}"
                                        type="radio"
-                                       value="{{ @seek }}" <check if="{{ @seeks == @seek }}">checked="checked"</check>>
+                                       value="{{ @seek }}"
+                                <check if="{{ @seeks == @seek }}">checked="checked"</check>>
                                 <label class="form-check-label" for="{{ @seek }}">{{ @seek }}</label>
                             </div>
                         </repeat>
                     </div>
-                </div><!-- Close seeking -->
+                </div>&lt;!&ndash; Close seeking &ndash;&gt;-->
 
                 <div class="form-row">
                     <label for="bio" class="col-mx-6 control-label"><strong>Biography</strong></label>
@@ -112,47 +132,7 @@
         </form>
         <br>
     </div>
-
     <!-- Footer -->
-    <div class="container">
-        <div class="col-align-self-center">
-            <div class="row justify-content-center">
-                <!-- found on mdbootstrap.com -->
-                <footer class="page-footer font-small blue">
-                    <!-- Copyright -->
-                    <div id="footer" class="footer-copyright text-center py-3">© 2020 Copyright:
-                        <a id="myURL" href="#">aharris.greenriverdev.com</a>
-                    </div>
-                </footer>
-            </div><!-- Footer row 1-->
-            <div class="row justify-content-center">
-                <div class="justify-content center">
-                    <!-- Linkedin -->
-                    <a href="https://www.linkedin.com/in/andrew-harris-sde/"
-                       target="_blank"
-                       class="fa-lg p-2 m-2 li-ic"><i class="fab fa-linkedin-in grey-text"></i></a>
-                    <!-- GitHub -->
-                    <a href="https://github.com/aharris52"
-                       target="_blank"
-                       class="fa-lg p-2 m-2 tw-ic"><i class="fab fa-github grey-text"></i></a>
-                </div>
-            </div><!-- Footer row 2-->
-        </div><!-- Footer column -->
-    </div><!-- Footer container -->
-
+    <include href="includes/footer.htm"></include>
     </body>
-
-    <!-- fontAwesome link-->
-    <script src="https://kit.fontawesome.com/b3af656e9f.js" crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-            crossorigin="anonymous"></script>
-
 </html>

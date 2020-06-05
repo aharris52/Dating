@@ -1,27 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- favicon -->
-    <link rel="icon" href="images/favicon.png" type="image/png"/>
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles/dating-styles.css">
-
-    <!-- Bootstrap Styles -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-          crossorigin="anonymous">
-
     <title>BikeMatch</title>
+    <include href="includes/header.htm"></include>
 </head>
 <body>
 <!-- Top NavBar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">BikeMatch</a>
-</nav><br>
+<include href="includes/nav-bar.htm"></include>
 
 <div class="container">
     <h2>Summary</h2>
@@ -36,16 +21,18 @@
             <label for="ownerid" class="control-label"><strong>Profile</strong></label>
             <div class="" id="ownerid">
                 <ul class="list-group">
-                    <li class="list-group-item">Name: {{ @SESSION.first}} {{ @SESSION.last}} </li>
-                    <li class="list-group-item">Gender: {{ @SESSION.gender}}</li>
-                    <li class="list-group-item">Age: {{ @SESSION.age}}</li>
-                    <li class="list-group-item">Phone: {{ @SESSION.phone}}</li>
-                    <li class="list-group-item">Email: {{ @SESSION.email}}</li>
-                    <li class="list-group-item">State: {{ @SESSION.state}}</li>
-                    <li class="list-group-item">Seeking: {{ @SESSION.seeking}}</li>
-                    <li class="list-group-item"><check if="{{ isset(@SESSION.indoor) }}">
-                        Interests: {{ implode(@SESSION.indoor, ", ") }}, {{ implode(@SESSION.outdoor, ", ") }}
-                    </check></li>
+                    <li class="list-group-item">Name: {{ @SESSION.user->getFirst() }} {{ @SESSION.user->getLast() }} </li>
+                    <li class="list-group-item">Gender: {{ @SESSION.user->getGender() }}</li>
+                    <li class="list-group-item">Age: {{ @SESSION.user->getAge() }}</li>
+                    <li class="list-group-item">Phone: {{ @SESSION.user->getPhone() }}</li>
+                    <li class="list-group-item">Email: {{ @SESSION.user->getEmail() }}</li>
+                    <li class="list-group-item">State: {{ @SESSION.user->getState() }}</li>
+                    <li class="list-group-item">Seeking: {{ @SESSION.user-> getSeeking() }}</li>
+                    <check if="{{ @SESSION.user instanceOf PremiumMember }}">
+                        <li class="list-group-item">
+                            Interests: {{ implode(@SESSION.user->getIndoor(), ", ") }}, {{ implode(@SESSION.user->getOutdoor(), ", ") }}
+                        </li>
+                    </check>
                 </ul>
             </div><br>
 
@@ -62,7 +49,7 @@
             <div class="mt-4 mb-4">
                 <label for="ownerid" class="col-mx-6 control-label"><strong>Biography</strong></label>
                 <div class="">
-                    <p>{{ @SESSION.bio}}</p>
+                    <p>{{ @SESSION.user->getBio() }}</p>
                 </div>
             </div>
         </div><!-- Close bio column -->
@@ -75,46 +62,7 @@
     </div><!-- Close Summary box -->
     <br><br><hr>
     <!-- Footer -->
-    <div class="container">
-        <div class="col-align-self-center">
-            <div class="row justify-content-center">
-                <!-- found on mdbootstrap.com -->
-                <footer class="page-footer font-small blue">
-                    <!-- Copyright -->
-                    <div id="footer" class="footer-copyright text-center py-3">© 2020 Copyright:
-                        <a id="myURL" href="#">aharris.greenriverdev.com</a>
-                    </div>
-                </footer>
-            </div><!-- Footer row 1-->
-            <div class="row justify-content-center">
-                <div class="justify-content center">
-                    <!-- Linkedin -->
-                    <a href="https://www.linkedin.com/in/andrew-harris-sde/"
-                       target="_blank"
-                       class="fa-lg p-2 m-2 li-ic"><i id="linkedIn" class="fab fa-linkedin-in grey-text"></i></a>
-                    <!-- GitHub -->
-                    <a href="https://github.com/aharris52"
-                       target="_blank"
-                       class="fa-lg p-2 m-2 tw-ic"><i id="gitHub" class="fab fa-github grey-text"></i></a>
-                </div>
-            </div><!-- Footer row 2-->
-        </div><!-- Footer column -->
-    </div><!-- Footer container -->
-
+    <include href="includes/footer.htm"></include>
 </div>
-
-<!-- fontAwesome link-->
-<script src="https://kit.fontawesome.com/b3af656e9f.js" crossorigin="anonymous"></script>
-<!-- Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-
 </body>
 </html>
