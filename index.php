@@ -14,8 +14,11 @@ session_start();
 
 // create an instance of the base class
 $f3 = Base::instance();
+global $validation;
 $validation = new Validation();
+global $controller;
 $controller = new Controller($f3, $validation);
+
 
 // define a default route
 $f3->route('GET /', function(){
@@ -41,21 +44,10 @@ $f3->route('GET|POST /interests', function(){
     $GLOBALS['controller']->interests();
 });
 
-// summary route
-/*$f3->route('GET|POST /summary', function($f3){
-
-    //troubleshooting
-    //echo '<h1>Hello world!</h1>';
-    //var_dump($_SESSION);
-    //var_dump($_POST);
-    $view = new Template();
-    echo $view->render('views/summary.html');
-
-});*/
-
 // summary
 $f3->route('GET /summary', function() {
     $GLOBALS['controller']->summary();
+    session_destroy();
 });
 
 // run fat free
