@@ -27,7 +27,7 @@ function getOutDoor()
 }
 
 //retrieve applicant state
-function getStates()
+function getState()
 {
     $states = array(" ",
                     "Alabama",
